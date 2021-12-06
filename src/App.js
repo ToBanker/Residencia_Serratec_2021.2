@@ -1,9 +1,12 @@
 import React from 'react';
-import Home from './pages/Home/Home';
+import {NavigationContainer} from '@react-navigation/native';
+import AppRoute from './routes/app.routes';
 
 const App = () => {
   return ( 
-    <Home />
+    <NavigationContainer>
+      <AppRoute />
+    </NavigationContainer>
   );
 };
 

@@ -1,6 +1,7 @@
 package com.lista_compras;
 
 import com.facebook.react.ReactActivity;
+import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +12,10 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "lista_compras";
+  }
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 }
