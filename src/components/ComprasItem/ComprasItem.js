@@ -1,16 +1,16 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
-const ComprasItem = ({id, nome, itensSelecionados, itensTotal}) => {
+const ComprasItem = ({id, nome, itensSelecionados, itensTotal, onPress}) => {
     return (
-        <View key={id} style={styles.container}>
+        <TouchableOpacity key={id} style={styles.container} onPress={onPress}>
             <Text>{nome}</Text>
             <Text>({itensSelecionados}/{itensTotal})</Text>
-            <TouchableOpacity>
+            {/* <TouchableOpacity>
                 <Text>Ir</Text>
-            </TouchableOpacity>
-        </View>
+            </TouchableOpacity> */}
+        </TouchableOpacity>
     );
 };
 
