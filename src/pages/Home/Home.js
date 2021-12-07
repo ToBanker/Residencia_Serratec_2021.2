@@ -1,7 +1,6 @@
 import React, { useLayoutEffect } from 'react';
 import { FlatList, Image, TouchableOpacity } from 'react-native';
 import ComprasItem from '../../components/ComprasItem/ComprasItem';
-import Header from '../../components/Header/Header';
 import styles from './styles';
 import ItemSeparator from '../../components/ItemSeparator/ItemSeparator'; 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -21,20 +20,21 @@ const Home = (props) => {
             />
             </TouchableOpacity>,
             headerLeft: () => <TouchableOpacity 
-            style={{
-                height: 30,
-                width: 30,
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}
-        >
+                style={{
+                    height: 30,
+                    width: 30,
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}
+                onPress={() => props.navigation.openDrawer()}
+            >
             <FontAwesome name='bars' size={25} />
         </TouchableOpacity>
         })
     }, []);
+
     return (
         <>
-            <Header iconName='bars' screenTitle='Minha Lista' />
             <FlatList
                 data={listaCompras}
                 renderItem={({item}) => (
@@ -43,7 +43,7 @@ const Home = (props) => {
                         nome={item.nome} 
                         itensSelecionados={item.itensSelecionados} 
                         itensTotal={item.itensTotal} 
-                        onPress={() => props.navigation.push('Listagem')}
+                        onPress={() => props.navigation.navigate('Listagem')}
                     />
                 )}
                 keyExtractor={(item) => item.id}

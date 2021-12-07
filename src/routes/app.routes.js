@@ -7,16 +7,18 @@ const Stack = createNativeStackNavigator();
 
 const AppRoute = () => {
     return(
-        <Stack.Navigator>
-            <Stack.Screen name='Home' component={Home} options={{
+        <Stack.Navigator 
+            initialRouteName='Home' 
+            screenOptions={{
                 title: 'Minha Lista',
-                headerTitleStyle: {
-                    fontSize: 25,
-                    fontWeight: '500',
-                },
-                headerTitleAlign: 'center'
-                
-            }}/>
+                    headerTitleStyle: {
+                        fontSize: 25,
+                        fontWeight: '500',
+                    },
+                    headerTitleAlign: 'center'
+            }}
+        >
+            <Stack.Screen name='Home' component={Home} />
             <Stack.Screen name='Listagem' component={Listagem} />
         </Stack.Navigator>
     )
