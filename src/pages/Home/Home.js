@@ -5,9 +5,9 @@ import styles from './styles';
 import ItemSeparator from '../../components/ItemSeparator/ItemSeparator'; 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-const Home = (props) => {
+const Home = ({ navigation }) => {
     useLayoutEffect(() => {
-        props.navigation.setOptions({
+        navigation.setOptions({
             headerRight: () => <TouchableOpacity>
             <Image 
                 source={{ uri: 'https://gazetadoriopardo.com.br/wp-content/uploads/2019/03/gatos-de-interior.jpg'}} 
@@ -26,7 +26,6 @@ const Home = (props) => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}
-                onPress={() => props.navigation.openDrawer()}
             >
             <FontAwesome name='bars' size={25} />
         </TouchableOpacity>
@@ -43,7 +42,6 @@ const Home = (props) => {
                         nome={item.nome} 
                         itensSelecionados={item.itensSelecionados} 
                         itensTotal={item.itensTotal} 
-                        onPress={() => props.navigation.navigate('Listagem')}
                     />
                 )}
                 keyExtractor={(item) => item.id}
