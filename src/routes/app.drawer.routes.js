@@ -10,7 +10,7 @@ const AppDrawerRoute = () => {
     return(
         <Drawer.Navigator screenOptions={{ headerShown: false, drawerPosition: 'right' }}>
             <Drawer.Screen 
-                name='Home' 
+                name='Main' 
                 component={AppRoute} 
                 options={{ 
                     title: 'Minha Lista',

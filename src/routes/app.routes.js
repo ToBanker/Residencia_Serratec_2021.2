@@ -15,7 +15,7 @@ const AppRoute = () => {
                         fontSize: 25,
                         fontWeight: '500',
                     },
-                    headerTitleAlign: 'center'
+                headerTitleAlign: 'center'
             }}
         >
             <Stack.Screen name='Home' component={Home} />

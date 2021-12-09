@@ -26,6 +26,7 @@ const Home = ({ navigation }) => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}
+                onPress={() => navigation.openDrawer()}
             >
             <FontAwesome name='bars' size={25} />
         </TouchableOpacity>
